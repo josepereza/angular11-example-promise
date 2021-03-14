@@ -7,10 +7,11 @@ import { Component, OnInit, VERSION } from "@angular/core";
 })
 export class AppComponent implements OnInit {
   ngOnInit(): void {
+    // The doAsyncTask function when called kicks of an asynchronous task and returns immediately.
     var promise = doAsyncTask();
     promise
       .then(() => {
-        console.log("promised");
+        console.log("promised"); 
       })
       .catch(error => {
         console.log("error in promise");
