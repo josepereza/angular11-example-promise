@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
     var promise = doAsyncTask();
     promise
       .then(() => {
-        console.log("promised"); 
+        console.log("promised");
       })
       .catch(error => {
         console.log("error in promise");
@@ -20,6 +20,11 @@ export class AppComponent implements OnInit {
         console.log("finished");
       });
     console.log("contunie working");
+
+    let promiseOK = Promise.resolve("done");
+    promiseOK.then(val => console.log(val));
+    let promiseKO = Promise.resolve("ERROR");
+    promiseKO.then(val => console.log(val));
   }
 
   name = "Angular " + VERSION.major;
